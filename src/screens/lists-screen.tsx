@@ -47,17 +47,14 @@ const listDetails: Record<ListKind, { title: string; description: string }> = {
 
 /** Pantalla aislada para evitar anidar listas virtualizadas dentro de ScrollView. */
 export function ListsScreen() {
-  const { colors, mode } = useAppTheme();
+  const { colors } = useAppTheme();
   const insets = useSafeAreaInsets();
   const [activeList, setActiveList] = React.useState<ListKind>("flat");
   const detail = listDetails[activeList];
 
   return (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
-      <StatusBar
-        backgroundColor={colors.background}
-        barStyle={mode === "dark" ? "light-content" : "dark-content"}
-      />
+      <StatusBar hidden={false} />
       <View
         style={[
           styles.header,

@@ -23,7 +23,7 @@ import { useScrollPosition } from "@/hooks/use-scroll-position";
 
 /** Pantalla principal: ScrollView con RefreshControl y los ejemplos introductorios. */
 export function HomeScreen() {
-  const { colors, mode } = useAppTheme();
+  const { colors } = useAppTheme();
   const { width } = useWindowDimensions();
   const insets = useSafeAreaInsets();
   const scrollRef = React.useRef<ScrollView>(null);
@@ -38,10 +38,7 @@ export function HomeScreen() {
 
   return (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
-      <StatusBar
-        barStyle={mode === "dark" ? "light-content" : "dark-content"}
-        hidden={false}
-      />
+      <StatusBar hidden={false} />
       {/* El área segura pertenece al contenedor: también protege el indicador de refresco. */}
       <View style={[styles.scrollViewport, { marginTop: insets.top }]}>
         <ScrollView
@@ -72,7 +69,7 @@ export function HomeScreen() {
           >
             <Hero />
             <AppCard
-              description="StatusBar controla la barra del celular con la hora, señal y batería; cambia sus iconos según el tema. En web no dibuja una barra. ScrollView permite desplazarse cuando el contenido supera la pantalla."
+              description="StatusBar permite controlar la barra del celular con la hora, señal y batería. En esta app conserva la apariencia del sistema; en web no dibuja una barra. ScrollView permite desplazarse cuando el contenido supera la pantalla."
               eyebrow="00 · CONTEXTO"
               title="StatusBar + ScrollView"
             >

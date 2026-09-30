@@ -11,16 +11,15 @@ export default function RootLayout() {
   );
 }
 
-/** Mantiene visible y legible la barra del sistema en las pantallas del stack nativo. */
+/** Configura el fondo de las pantallas y mantiene visible la barra del sistema. */
 function AppNavigator() {
-  const { colors, mode } = useAppTheme();
+  const { colors } = useAppTheme();
 
   return (
     <Stack
       screenOptions={{
         headerShown: false,
         statusBarHidden: false,
-        statusBarStyle: mode === "dark" ? "light" : "dark",
         contentStyle: { backgroundColor: colors.background },
       }}
     >
