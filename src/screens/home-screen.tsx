@@ -86,9 +86,6 @@ export function HomeScreen() {
               onOpenModal={() => setIsModalVisible(true)}
               onShowLists={() => router.push("/listas")}
             />
-            <Text selectable style={[styles.footer, { color: colors.text }]}>
-              Hecho con componentes nativos de React Native.
-            </Text>
           </View>
         </ScrollView>
       </View>

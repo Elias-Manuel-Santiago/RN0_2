@@ -9,7 +9,6 @@
     "userInterfaceStyle": "automatic",
     "ios": {
       "icon": "./assets/expo.icon"
-      
     },
     "android": {
       "adaptiveIcon": {
@@ -18,7 +17,8 @@
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.mayonesium.RN0_2"
     },
     "web": {
       "output": "static",
@@ -38,6 +38,12 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "4d04bd32-ef15-4844-8556-c6cb82375ffa"
+      }
     }
   }
 }
